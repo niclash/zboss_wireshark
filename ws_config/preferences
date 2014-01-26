@@ -1,0 +1,9 @@
+gui.filter_expressions.label: data
+gui.filter_expressions.enabled: TRUE
+gui.filter_expressions.expr: data
+gui.filter_expressions.label: malformed
+gui.filter_expressions.enabled: TRUE
+gui.filter_expressions.expr: malformed
+gui.filter_expressions.label: zbee_zcl
+gui.filter_expressions.enabled: TRUE
+gui.filter_expressions.expr: zbee_zcl

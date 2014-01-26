@@ -1,0 +1,21 @@
+DSR modifications to Wireshark network analyzer
+
+Wireshark version is 1.10.0.
+
+- Implemented ZigBee NWK packet dissection with proto version determination.
+
+- Implemented ZigBee Green Power profile with GP commands and GP security.
+
+- Added ZBOSS Network Simulator detector plug-in. Can also detect packets
+  direction.
+
+- Added ZUZ plug-in. This plug-in allows to parse UBEC registers access over
+  802.15.*.
+
+- Added ZUDP plug-in (ZigBee over UDP).
+
+- Improved ZCL dissectors. Implemented discover commands and cluster-specific
+  commands for Thermostat, IAS Zone, Poll Control, Identify and OTA Upgrade
+  clusters.
+
+- Fixed segfault in packet-zbee-security.c.

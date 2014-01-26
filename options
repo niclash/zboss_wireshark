@@ -1,0 +1,45 @@
+TARGET_WIRESHARK_DIR=ws_target
+MODIFIED_FILES_DIR=modified_files
+
+err() {
+  echo "failure"
+  exit 1
+}
+
+clean() {
+    cd $TARGET_WIRESHARK_DIR
+    make clean
+    cd ../
+}
+
+build() {
+    cd $TARGET_WIRESHARK_DIR
+    # make all PYTHON=python2 -j9
+    make -j9
+    cd ../
+}
+
+configure() {
+    cd $TARGET_WIRESHARK_DIR
+    ./configure --with-ssl --with-zlib=yes
+    cd ../
+}
+
+configure_for_gdb() {
+    cd $TARGET_WIRESHARK_DIR
+    CFLAGS='-g -O0' ./configure --with-ssl --with-zlib=yes
+    cd ../
+}
+
+rebuild() {
+    clean
+    configure
+    build
+}
+
+rebuild_for_gdb() {
+    clean
+    configure_for_gdb
+    build
+}
+

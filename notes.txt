@@ -1,0 +1,6 @@
+If you've some problems with Lua and g* libraries please try to use these options:
+
+CFLAGS="-O2 -I/usr/include/lua5.1" ./configure --with-ssl --with-zlib=yes
+make -j5 LDFLAGS="-lgmodule-2.0"
+
+...and add the optimization flag to configure file into CC options. For example, -O2 (header defines sections errors, invalid includes related to compiler flags).
